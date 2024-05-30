@@ -9,3 +9,11 @@ This is a compilation of Splunk queries that I've collected and used over time. 
 | eval calendar_quarter = "CY" . strftime(_time,"%Y") . "Q" . case(tonumber(strftime(_time,"%m"))<=3,"1",tonumber(strftime(_time,"%m"))<=6,"2",tonumber(strftime(_time,"%m"))<=9,"3",tonumber(strftime(_time,"%m"))<=12,"4")
 ```
 <br />
+
+```
+## Search with earliest value specified as string
+index=_internal earliest="01/01/2024:00:00:00"
+| head 1
+```
+<br />
+

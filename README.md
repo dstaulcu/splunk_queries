@@ -13,13 +13,10 @@ This is a compilation of Splunk queries that I've collected and used over time. 
 ```
 ## Search with earliest value specified as string
 index=_internal earliest="01/01/2024:00:00:00"
-| head 1
 ```
 <br />
 
 ```
 ## Search with earliest and latest values constraining results to previous quarter
 index=_internal earliest=-1qtr@qtr latest=@qtr
-| head 1
-| head 1
 ```

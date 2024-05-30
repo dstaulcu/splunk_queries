@@ -17,6 +17,6 @@ index=_internal earliest="01/01/2024:00:00:00"
 <br />
 
 ```
-## Search with earliest and latest values constraining results to previous quarter
+## Search with earliest and latest values constraining results to previous quarter using relative time modifiers
 index=_internal earliest=-1qtr@qtr latest=@qtr
 ```

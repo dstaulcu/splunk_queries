@@ -20,3 +20,15 @@ index=_internal earliest="01/01/2024:00:00:00"
 ## Search with earliest and latest values constraining results to previous quarter using relative time modifiers
 index=_internal earliest=-1qtr@qtr latest=@qtr
 ```
+
+
+```
+## search which calculates difference in two times in seconds and displays output in readable time format HH:MM:SS.
+| makeresults count=5000 
+| streamstats count 
+| eval latestTime = _time
+| eval earliestTime = latestTime - (random() % 86400 * 2) + 1
+| eval duration = tostring(latestTime - earliestTime,"duration")
+| eval earliestTime = strftime(earliestTime,"%Y-%m-%d %H:%M:%S"), latestTime = strftime(latestTime,"%Y-%m-%d %H:%M:%S")
+```
+

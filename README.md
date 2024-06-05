@@ -23,7 +23,7 @@ index=_internal earliest=-1qtr@qtr latest=@qtr
 
 
 ```
-## search which calculates difference in two times in seconds and displays output in readable time format HH:MM:SS.
+## search which calculates difference in seconds between two time-based fields and displays duration in readable time format HH:MM:SS.
 | makeresults count=5000 
 | streamstats count 
 | eval latestTime = _time
